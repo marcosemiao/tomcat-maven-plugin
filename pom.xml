@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.marcosemiao.tomcat.deploy</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>parent/pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.github.marcosemiao.tomcat.deploy</groupId>
+	<artifactId>tomcat-maven-plugin</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<name>Tomcat Maven Plugin</name>
+
+	<scm>
+		<connection>scm:git:git@github.com:marcosemiao/tomcat-maven-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:marcosemiao/tomcat-maven-plugin.git</developerConnection>
+		<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<modules>
+		<module>parent</module>
+		<module>tomcat-maven-plugin</module>
+	</modules>
+</project>
