@@ -7,9 +7,9 @@ public class Tomcat7Manager implements TomcatManager {
 
     private String url = "http://localhost:8080/manager/text";
 
-    private String username = "manager";
+    private String username = "admin";
 
-    private String password = "manager";
+    private String password = "admin";
 
     public void setUrl(final String url) {
 	this.url = url;
