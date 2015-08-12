@@ -2,15 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.marcosemiao.tomcat.deploy</groupId>
+	<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
 	<artifactId>parent</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
 	<name>Tomcat Maven Plugin Parent</name>
 
-	<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
+	<url>https://github.com/marcosemiao/tomcat-manager</url>
 
 	<licenses>
 		<license>
@@ -23,7 +23,7 @@
 		<developer>
 			<name>Marco Semiao</name>
 			<url>https://marcosemiao4j.wordpress.com</url>
-			<organizationUrl>https://github.com/marcosemiao/openjpa-ws-db2-rownumber</organizationUrl>
+			<organizationUrl>https://github.com/marcosemiao/tomcat-maven-plugin</organizationUrl>
 		</developer>
 	</developers>
 
@@ -53,6 +53,63 @@
 	<prerequisites>
 		<maven>3.0</maven>
 	</prerequisites>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.10</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.jdom</groupId>
+				<artifactId>jdom</artifactId>
+				<version>2.0.2</version>
+			</dependency>
+
+			<!-- Logger -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>1.7.12</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.github.marcosemiao.serviceloader</groupId>
+				<artifactId>serviceloader-processor</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
+				<artifactId>maven-plugin-logger-api</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
+				<artifactId>maven-plugin-logger-slf4j</artifactId>
+				<version>1.0.0-SNAPSHOT</version>
+				<scope>provided</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.maven</groupId>
+				<artifactId>maven-plugin-api</artifactId>
+				<version>[3.1.1,)</version>
+			</dependency>
+
+			<!-- Annotation Maven Plugin -->
+			<dependency>
+				<groupId>org.apache.maven.plugin-tools</groupId>
+				<artifactId>maven-plugin-annotations</artifactId>
+				<version>3.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<!-- Permet d'uniformiser aux niveaux des pom parents la configuration 

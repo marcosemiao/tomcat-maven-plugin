@@ -6,27 +6,21 @@
 		<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>parent/pom.xml</relativePath>
+		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
 	<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
-	<artifactId>tomcat-maven-plugin-root</artifactId>
+	<artifactId>tomcat-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
-	<name>Tomcat Maven Plugin Root</name>
-
-	<scm>
-		<connection>scm:git:git@github.com:marcosemiao/tomcat-maven-plugin.git</connection>
-		<developerConnection>scm:git:git@github.com:marcosemiao/tomcat-maven-plugin.git</developerConnection>
-		<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
-		<tag>HEAD</tag>
-	</scm>
+	<name>Tomcat Manager</name>
 
 	<modules>
-		<module>parent</module>
-		<module>tomcat-manager</module>
-		<module>tomcat-maven-plugin</module>
+		<module>tomcat-manager-core</module>
+		<module>tomcat-manager-api</module>
+		<module>tomcat6-manager-impl</module>
+		<module>tomcat7-manager-impl</module>
 	</modules>
 </project>

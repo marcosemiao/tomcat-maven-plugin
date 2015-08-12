@@ -1,6 +1,6 @@
 package fr.ms.tomcat.manager;
 
-public interface TomcatPackagingManager {
+public interface TomcatManager {
 
     void setUrl(String url);
 

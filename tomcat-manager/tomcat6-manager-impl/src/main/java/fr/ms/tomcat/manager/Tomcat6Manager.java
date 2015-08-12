@@ -3,13 +3,13 @@ package fr.ms.tomcat.manager;
 import fr.ms.util.ServiceProvider;
 
 @ServiceProvider
-public class Tomcat7WarManagerDeploy implements TomcatPackagingManager {
+public class Tomcat6Manager implements TomcatManager {
 
-    private String url = "http://localhost:8080/manager/text";
+    private String url = "http://localhost:8080/manager";
 
-    private String username = "admin";
+    private String username = "manager";
 
-    private String password = "admin";
+    private String password = "manager";
 
     public void setUrl(final String url) {
 	this.url = url;
@@ -28,7 +28,7 @@ public class Tomcat7WarManagerDeploy implements TomcatPackagingManager {
 
     public void deploy(final String warName, final String DocBase) {
 	try {
-	    final TomcatManager tomcatManager = new TomcatManager(url, username, password);
+	    final TomcatManagerImpl tomcatManager = new TomcatManagerImpl(url, username, password);
 	    tomcatManager.deploy(warName, DocBase);
 	} catch (final Exception e) {
 	    throw new TomcatManagerException(e);
@@ -37,7 +37,7 @@ public class Tomcat7WarManagerDeploy implements TomcatPackagingManager {
 
     public void undeploy(final String warName) {
 	try {
-	    final TomcatManager tomcatManager = new TomcatManager(url, username, password);
+	    final TomcatManagerImpl tomcatManager = new TomcatManagerImpl(url, username, password);
 	    tomcatManager.undeploy(warName);
 	} catch (final Exception e) {
 	    throw new TomcatManagerException(e);
@@ -46,15 +46,14 @@ public class Tomcat7WarManagerDeploy implements TomcatPackagingManager {
 
     public boolean isDeploy(final String warName) {
 	try {
-	    final TomcatManager tomcatManager = new TomcatManager(url, username, password);
+	    final TomcatManagerImpl tomcatManager = new TomcatManagerImpl(url, username, password);
 	    return tomcatManager.isDeploy(warName);
 	} catch (final Exception e) {
 	    throw new TomcatManagerException(e);
 	}
     }
 
-    @Override
     public int getVersion() {
-	return 7;
+	return 6;
     }
 }

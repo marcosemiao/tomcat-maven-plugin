@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../../parent/pom.xml</relativePath>
+	</parent>
+
+	<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+	<artifactId>tomcat6-manager-impl</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>jar</packaging>
+
+	<name>Tomcat 6 Manager Impl</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<artifactId>tomcat-manager-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<artifactId>tomcat-manager-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.github.marcosemiao.serviceloader</groupId>
+			<artifactId>serviceloader-processor</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+</project>
