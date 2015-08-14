@@ -12,25 +12,15 @@ import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TomcatManagerUrl {
+public final class TomcatManagerUrl {
 
     private static final Logger LOG = LoggerFactory.getLogger(TomcatManagerUrl.class);
 
     private TomcatManagerUrl() {
-	// Rien
     }
 
-    /**
-     * Appel une url
-     *
-     * @param path
-     *            l'url d'appel
-     * @return le retour de l'url
-     * @throws MalformedURLException
-     * @throws TomcatManagerException
-     * @throws IOException
-     */
-    public static String appelUrl(final String url, final String username, final String password, final String charset) throws MalformedURLException {
+    public static String appelUrl(final String url, final String username, final String password, final String charset)
+	    throws MalformedURLException {
 
 	LOG.debug("Parametre http get : " + url.toString());
 
@@ -60,7 +50,8 @@ public class TomcatManagerUrl {
 	    if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
 		if (connection.getResponseCode() == HttpURLConnection.HTTP_UNAUTHORIZED) {
 		    throw new TomcatManagerException("Reponse http : " + connection.getResponseMessage()
-			    + " - Les droits \"manager\" ne sont pas appliques - utilisateur : \"" + username + "\" password : \"" + password + "\"");
+			    + " - Les droits \"manager\" ne sont pas appliques - utilisateur : \"" + username
+			    + "\" password : \"" + password + "\"");
 		}
 		throw new TomcatManagerException("HttpURLConnection.HTTP_UNAUTHORIZED");
 	    }

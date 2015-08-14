@@ -10,7 +10,7 @@
 
 	<name>Tomcat Maven Plugin Parent</name>
 
-	<url>https://github.com/marcosemiao/tomcat-manager</url>
+	<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
 
 	<licenses>
 		<license>
@@ -47,7 +47,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.build.java.version>1.6</project.build.java.version>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+		<release.tagNameFormat>tomcat-maven-plugin-@{project.version}</release.tagNameFormat>
 	</properties>
 
 	<prerequisites>
@@ -68,7 +70,6 @@
 				<version>2.0.2</version>
 			</dependency>
 
-			<!-- Logger -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
@@ -79,19 +80,19 @@
 			<dependency>
 				<groupId>com.github.marcosemiao</groupId>
 				<artifactId>serviceloader-processor</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
 				<artifactId>maven-plugin-logger</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1</version>
 			</dependency>
 
 			<dependency>
 				<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
 				<artifactId>maven-plugin-logger-slf4j</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
+				<version>0.0.1</version>
 			</dependency>
 
 			<dependency>
@@ -100,7 +101,6 @@
 				<version>3.3.3</version>
 			</dependency>
 
-			<!-- Annotation Maven Plugin -->
 			<dependency>
 				<groupId>org.apache.maven.plugin-tools</groupId>
 				<artifactId>maven-plugin-annotations</artifactId>
@@ -110,52 +110,18 @@
 	</dependencyManagement>
 
 	<build>
-		<!-- Permet d'uniformiser aux niveaux des pom parents la configuration 
-			et la version des plugins -->
 		<pluginManagement>
 			<plugins>
-				<!-- Plugin permettant le nettoyage du projet -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-clean-plugin</artifactId>
-					<version>2.6.1</version>
-				</plugin>
-
-				<!-- Plugin permettant de gérer les ressources -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>2.7</version>
-				</plugin>
-
-				<!-- Plugin permettant la compilation -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.3</version>
 					<configuration>
-						<source>${project.build.java.version}</source>
-						<target>${project.build.java.version}</target>
 						<showDeprecation>true</showDeprecation>
 						<optimize>true</optimize>
 					</configuration>
 				</plugin>
 
-				<!-- Plugin permettant de générer le jar -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.6</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>test-jar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-
-				<!-- Plugin permettant de générer le code source -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
@@ -170,7 +136,6 @@
 					</executions>
 				</plugin>
 
-				<!-- Plugin permettant de générer la javadoc -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -185,22 +150,6 @@
 					</executions>
 				</plugin>
 
-				<!-- Permet de generer les packaging -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-shade-plugin</artifactId>
-					<version>2.4</version>
-					<configuration>
-						<createSourcesJar>true</createSourcesJar>
-						<dependencyReducedPomLocation>${project.build.directory}/dependency-reduced-pom.xml</dependencyReducedPomLocation>
-						<transformers>
-							<transformer
-								implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-						</transformers>
-					</configuration>
-				</plugin>
-
-				<!-- Plugin permettant de signer les artifacts -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
@@ -216,28 +165,6 @@
 					</executions>
 				</plugin>
 
-				<!-- Plugin permettant de générer les tests unitaires -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.18.1</version>
-				</plugin>
-
-				<!-- Plugin permettant d'installer sur le repository local -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-install-plugin</artifactId>
-					<version>2.5.2</version>
-				</plugin>
-
-				<!-- Plugin permettant de deployer sur les repository distant -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-deploy-plugin</artifactId>
-					<version>2.8.2</version>
-				</plugin>
-
-				<!-- Permet de tagguer une version -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
@@ -245,11 +172,10 @@
 					<configuration>
 						<autoVersionSubmodules>true</autoVersionSubmodules>
 						<useReleaseProfile>false</useReleaseProfile>
+						<tagNameFormat>${release.tagNameFormat}</tagNameFormat>
 					</configuration>
 				</plugin>
 
-				<!-- Plugins Optionnels en fonction d'un profil -->
-				<!-- Plugin JRebel - permet de deployer a chaud -->
 				<plugin>
 					<groupId>org.zeroturnaround</groupId>
 					<artifactId>jrebel-maven-plugin</artifactId>
@@ -266,13 +192,11 @@
 		</pluginManagement>
 
 		<plugins>
-			<!-- Plugin permettant de générer le code source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
 			</plugin>
 
-			<!-- Plugin permettant de générer la javadoc -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>

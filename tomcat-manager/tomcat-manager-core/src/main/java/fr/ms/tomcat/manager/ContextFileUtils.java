@@ -15,15 +15,15 @@ import org.jdom2.output.XMLOutputter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ContextFileUtils {
+public final class ContextFileUtils {
 
     private static final Logger LOG = LoggerFactory.getLogger(ContextFileUtils.class);
 
     private ContextFileUtils() {
-	// Rien
     }
 
-    public static File creationFichierContextDocBase(final String fichierContext, final String webappDirectory) throws JDOMException, IOException {
+    public static File creationFichierContextDocBase(final String fichierContext, final String webappDirectory)
+	    throws JDOMException, IOException {
 	final File fileFichierContext = new File(fichierContext);
 	final File fileWebappDirectory = new File(webappDirectory);
 
@@ -31,7 +31,8 @@ public class ContextFileUtils {
 
     }
 
-    public static File creationFichierContextDocBase(final File fichierContext, final File webappDirectory) throws JDOMException, IOException {
+    public static File creationFichierContextDocBase(final File fichierContext, final File webappDirectory)
+	    throws JDOMException, IOException {
 
 	Element context = null;
 	Document document = null;
