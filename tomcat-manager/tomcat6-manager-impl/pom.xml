@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+		<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+	<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 	<artifactId>tomcat6-manager-impl</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -19,18 +19,18 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 			<artifactId>tomcat-manager-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 			<artifactId>tomcat-manager-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.marcosemiao.serviceloader</groupId>
+			<groupId>com.github.marcosemiao</groupId>
 			<artifactId>serviceloader-processor</artifactId>
 			<scope>provided</scope>
 		</dependency>

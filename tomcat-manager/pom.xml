@@ -3,19 +3,24 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+		<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+	<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 	<artifactId>tomcat-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
 	<name>Tomcat Manager</name>
+
+	<properties>
+		<maven.install.skip>true</maven.install.skip>
+		<maven.deploy.skip>true</maven.deploy.skip>
+	</properties>
 
 	<modules>
 		<module>tomcat-manager-core</module>

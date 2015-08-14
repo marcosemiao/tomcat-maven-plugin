@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+		<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 		<artifactId>parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>../parent/pom.xml</relativePath>
@@ -19,31 +19,31 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 			<artifactId>tomcat-manager-api</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 			<artifactId>tomcat6-manager-impl</artifactId>
 			<scope>runtime</scope>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.github.marcosemiao.tomcat.manager</groupId>
+			<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 			<artifactId>tomcat7-manager-impl</artifactId>
 			<scope>runtime</scope>
 			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
-			<artifactId>maven-plugin-logger-api</artifactId>
+			<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
+			<artifactId>maven-plugin-logger</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
+			<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
 			<artifactId>maven-plugin-logger-slf4j</artifactId>
 		</dependency>
 

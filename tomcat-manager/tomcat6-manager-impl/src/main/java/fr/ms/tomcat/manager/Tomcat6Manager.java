@@ -1,8 +1,8 @@
 package fr.ms.tomcat.manager;
 
-import fr.ms.util.ServiceProvider;
+import fr.ms.util.ServiceLoader;
 
-@ServiceProvider
+@ServiceLoader
 public class Tomcat6Manager implements TomcatManager {
 
     private String url = "http://localhost:8080/manager";

@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.marcosemiao.maven.tomcat.manager</groupId>
+	<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 	<artifactId>parent</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
@@ -77,21 +77,21 @@
 
 
 			<dependency>
-				<groupId>com.github.marcosemiao.serviceloader</groupId>
+				<groupId>com.github.marcosemiao</groupId>
 				<artifactId>serviceloader-processor</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-				<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
-				<artifactId>maven-plugin-logger-api</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
+				<artifactId>maven-plugin-logger</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
-				<groupId>com.github.marcosemiao.maven.maven-plugin-logger</groupId>
+				<groupId>com.github.marcosemiao.maven.plugin.logger</groupId>
 				<artifactId>maven-plugin-logger-slf4j</artifactId>
-				<version>1.0.0-SNAPSHOT</version>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
