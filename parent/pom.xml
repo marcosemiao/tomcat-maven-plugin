@@ -3,11 +3,13 @@
 
 	<groupId>com.github.marcosemiao.tomcat.maven.plugin</groupId>
 	<artifactId>parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 
 	<packaging>pom</packaging>
 
 	<name>Tomcat Maven Plugin Parent</name>
+
+	<description>Tomcat Maven Plugin is a Maven Plugin to generate Tomcat context file</description>
 
 	<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
 
