@@ -5,7 +5,7 @@ Installation :
 1/
 Rajouter le profil "manager-gui" à l'utilisateur "admin" dans le fichier tomcat-users.xml de votre Tomcat (répertoire conf) :
 
-	<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
 	<user username="admin" password="admin" roles="manager-script"/>
     
 2/Demarrer le Tomcat (au moins la version 7)
@@ -58,7 +58,5 @@ et le contenu est :
 
 <?xml version="1.0" encoding="UTF-8"?>
 <Context docBase="C:\Perso\dev\workspace\release-5.2.1\subsonic-main\target\subsonic" workDir="C:\Perso\dev\workspace\release-5.2.1\subsonic-main\target\subsonic-workDir" />
-
-
 
 
