@@ -9,7 +9,7 @@
 
 	<name>Tomcat Maven Plugin Parent</name>
 
-	<description>Tomcat Maven Plugin is a Maven Plugin to generate Tomcat context file</description>
+	<description>Maven Plugin to deploy directory webapp</description>
 
 	<url>https://github.com/marcosemiao/tomcat-maven-plugin</url>
 
